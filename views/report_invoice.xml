@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@name='payment_term']" position="after">
+
+                <div t-if="o.payment_term_details" id="total_payment_term_details_table" class="row">
+                    <div t-attf-class="#{'col-7' if report_type != 'html' else 'col-sm-7 col-md-6'} mt-2 mb-2">
+                        <table class="table table-sm" style="page-break-inside: avoid;">
+                            <td>Cash-discount</td>
+                            <t t-foreach="o.payment_term_details" t-as="term">
+                                <tr>
+                                      <td t-if="term.get('date')" class="text-end">
+                                        <span t-options='{"widget": "monetary", "display_currency": o.currency_id}'
+                                              t-esc="term.get('amount')"/> if paid before
+                                        <span t-esc="term.get('date')"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+        </xpath>
+    </template>
+
+</odoo>

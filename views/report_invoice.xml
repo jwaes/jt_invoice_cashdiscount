@@ -21,6 +21,10 @@
                     </div>
                 </div>
         </xpath>
+
+        <xpath expr="//p[@name='payment_communication']" position="attributes">
+            <attribute name="class" separator=" " add="mt-2"/>
+        </xpath>
     </template>
 
 </odoo>

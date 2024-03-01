@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+<!-- 
     <template id="report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//p[@name='payment_term']" position="after">
 
@@ -25,6 +25,6 @@
         <xpath expr="//p[@name='payment_communication']" position="attributes">
             <attribute name="class" separator=" " add="mt-2"/>
         </xpath>
-    </template>
+    </template> -->
 
 </odoo>
